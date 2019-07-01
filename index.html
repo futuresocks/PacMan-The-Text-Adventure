@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="PacMan: The Text Adventure" startnode="1" creator="Twine" creator-version="2.2.1" ifid="8E8A9972-7E35-4063-B8F4-5C535AD97CD1" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Beginning" tags="" position="359,184" size="200,100">You awake in maze. Narrow walls confine your existence. Ahead of you, an endless row of edible dots. Inside of you, the burning need to consume. 
+<tw-storydata name="PacMan: The Text Adventure" startnode="5" creator="Twine" creator-version="2.2.1" ifid="8E8A9972-7E35-4063-B8F4-5C535AD97CD1" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Beginning" tags="" position="349,140" size="200,100">You awaken in a maze. Narrow walls confine your existence. Ahead of you, an endless row of edible dots. Inside of you, the burning need to consume. 
 
 Memories of a past life haunt you. The only thing you can be sure of is that your name is (either: &quot;Robert J.&quot;, &quot;Ethel T.&quot;, &quot;Fernando&quot;, &quot;Brian&quot;, &quot;Susan&quot;, &quot;Carol&quot;) Pac-Man.
 
@@ -21,11 +21,7 @@ You can only move [[forward-&gt;Forward]].
 (set: $ghostFollowing to false)
 (set: $megaPillEaten to false)
 
-&lt;audio src=&quot;https://raw.githubusercontent.com/masonicGIT/pacman/master/sounds/start-music.mp3&quot; autoplay&gt;
-
-
-
-http://23.237.126.42/ost/pac-man-game-sound-effects/gmiffyvl/Intro.mp3</tw-passagedata><tw-passagedata pid="2" name="Forward" tags="" position="401,335" size="100,100">(if: $dots is 0)[(go-to: &quot;Endgame&quot;)](either: &quot;Starving&quot;, &quot;Ever-hungry&quot;, &quot;Ravenous&quot;), you (either: &quot;drag your yellow carcass onwards&quot;, &quot;trudge on&quot;, &quot;press forward&quot;), and (either: &quot;feed&quot;, &quot;consume&quot;, &quot;devour&quot;). (set: $dots to $dots -1)
+&lt;audio src=&quot;https://raw.githubusercontent.com/masonicGIT/pacman/master/sounds/start-music.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="2" name="Forward" tags="" position="401,335" size="100,100">(if: $dots is 0)[(go-to: &quot;Endgame&quot;)](either: &quot;Starving&quot;, &quot;Ever-hungry&quot;, &quot;Ravenous&quot;), you (either: &quot;drag your yellow carcass onwards&quot;, &quot;trudge on&quot;, &quot;press forward&quot;), and (either: &quot;feed&quot;, &quot;consume&quot;, &quot;devour&quot;). (set: $dots to $dots -1)
 
 (if: $megaPillEaten is false)[(set: $megaPillChance to (random: 1, 4))(if: $megaPillChance is 3)[(set: $megaPillEaten to true) This dot is larger than the others. As you swallow it whole, you feel a power, unlike any you have ever known, coursing through your spherical veins. Is this divinity?](else:)[The (either: &quot;miniscule&quot;, &quot;tiny&quot;, &quot;weakling&quot;, &quot;meek&quot;, &quot;pointless&quot;) dot (either: &quot;provides&quot;, &quot;offers&quot;, &quot;serves&quot;) (either: &quot;little salvation&quot;, &quot;small comfort&quot;, &quot;nothing more than a second&#39;s respite&quot;) to your (either: &quot;perpetual emptiness&quot;, &quot;yellow nightmare&quot;, &quot;feeding frenzy&quot;, &quot;cursed existence&quot;).]](else:)[Another dot. Small, and insignificant compared to the power you wield.]
 
@@ -36,7 +32,7 @@ http://23.237.126.42/ost/pac-man-game-sound-effects/gmiffyvl/Intro.mp3</tw-passa
 Why go [[forward-&gt;Forward]] when you could [[face the ghost -&gt; GhostEncounter]]?
 ](else:)[Ahead of you, (either: &quot;dots remain&quot;, &quot;more dots&quot;, &quot;the dots await&quot;). 
 
-(either: &quot;You are compelled to&quot;, &quot;Instinctively, you&quot;, &quot;You feel you have no choice but to&quot;) move [[forward-&gt;Forward]] but there is always (link: &quot;the other direction&quot;)[(go-to: &quot;Forward&quot;)]]
+(either: &quot;You are compelled to&quot;, &quot;Instinctively, you&quot;, &quot;You feel you have no choice but to&quot;) move [[forward-&gt;Forward]] but there is always (link: &quot;the other direction&quot;)[(go-to: &quot;Forward&quot;)].]
 
 (if: $megaPillEaten is true)[&lt;audio autoplay loop src=&quot;https://raw.githubusercontent.com/masonicGIT/pacman/master/sounds/ghost-turn-to-blue.mp3&quot;/&gt;](else:)[&lt;audio autoplay loop src=&quot;https://raw.githubusercontent.com/masonicGIT/pacman/master/sounds/eating.mp3&quot;&gt;]</tw-passagedata><tw-passagedata pid="3" name=" GhostEncounter" tags="" position="401,484" size="100,100">(if: $megaPillEaten is true)[The ghost tries to flee, terrified and blue. 
 
@@ -44,7 +40,7 @@ It poses little challenge as you feast on its spectral carcass.  (set: $megaPill
 
 Yet the hunger remains.
 
-It is time to go [[forward-&gt;Forward]]. But you could go (link: &quot;the other direction&quot;)[(goto: &quot;Forward&quot;)]
+It is time to go [[forward-&gt;Forward]]. But you could go (link: &quot;the other direction&quot;)[(goto: &quot;Forward&quot;).]
 
 &lt;audio autoplay src=&quot;https://raw.githubusercontent.com/masonicGIT/pacman/master/sounds/eating-ghost.mp3&quot;/&gt;
 
@@ -58,9 +54,14 @@ All is quiet now. (link: &quot;But for how long?&quot;)[(goto: &quot;Beginning&q
 &lt;audio autoplay src=&quot;http://23.237.126.42/ost/pac-man-game-sound-effects/yfkgsbwu/Death.mp3&quot;/&gt;
 ]</tw-passagedata><tw-passagedata pid="4" name="Endgame" tags="" position="560,335" size="100,100">The dots are gone. The ghosts fall silent. The hunger remains.
 
-You have little choice but to (link: &quot;ascend&quot;)[(go-to: &quot;Beginning&quot;)] 
+You have little choice but to (link: &quot;ascend&quot;)[(go-to: &quot;Beginning&quot;)]. 
 
-&lt;audio autoplay src=&quot;https://freesound.org/data/previews/213/213146_1648170-lq.mp3&quot;/&gt;</tw-passagedata></tw-storydata>
+&lt;audio autoplay src=&quot;https://freesound.org/data/previews/213/213146_1648170-lq.mp3&quot;/&gt;</tw-passagedata><tw-passagedata pid="5" name="Title Screen" tags="" position="210,170" size="100,100">PAC-MAN: THE TEXT ADVENTURE
+
+A Futuresocks Game
+
+
+[[Start-&gt;Beginning]] </tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
